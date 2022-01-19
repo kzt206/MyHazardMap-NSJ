@@ -17,12 +17,12 @@
     width: 30%;
 }
 #title-label{
-    width: 50%;
+    width: 45%;
     /* background-color:blue; */
 }
 
 #download-button1{
-    width: 20%;
+    width: 15%;
     /* margin-left: 300px; */
     text-align: center;
     background-color: #00b7ff;
@@ -39,7 +39,7 @@
 }
 
 #download-button2{
-    width: 20%;
+    width: 15%;
     margin-left: 10px;
     text-align: center;
     background-color: #00b7ff;
