@@ -99,7 +99,7 @@ charaHome.src = "image/home.png"
 const charaSchool = new Image();
 charaSchool.src = "image/school.png"
 const charaEvacuation = new Image();
-charaEvacuation.src = "image/evacuation.png"
+charaEvacuation.src = "image/evacuation2.png"
 const charaCamera1 = new Image();
 charaCamera1.src = "image/camera1.png"
 const charaCamera2 = new Image();
@@ -110,6 +110,12 @@ const charaCamera4 = new Image();
 charaCamera4.src = "image/camera4.png"
 const charaCamera5 = new Image();
 charaCamera5.src = "image/camera5.png"
+const charaCamera6 = new Image();
+charaCamera6.src = "image/camera6.png"
+const charaCamera7 = new Image();
+charaCamera7.src = "image/camera7.png"
+const charaCamera8 = new Image();
+charaCamera8.src = "image/camera8.png"
 const charaNote1 = new Image();
 charaNote1.src = "image/note1.png"
 const charaNote2 = new Image();
@@ -129,7 +135,7 @@ charaNote8.src = "image/note8.png"　　　　　　　　　　　　
 const charaNote9 = new Image();
 charaNote9.src = "image/note9.png"
 
-charaCameraFileList = ["image/camera1.png","image/camera2.png","image/camera3.png","image/camera4.png"]
+charaCameraFileList = ["image/camera1.png","image/camera2.png","image/camera3.png","image/camera4.png","image/camera5.png","image/camera6.png","image/camera7.png","image/camera8.png"]
 charaCamera = []
 charaCameraFileList.forEach(function(value,index){
     charaCamera.push(new Image());
@@ -182,6 +188,22 @@ camera3Button.addEventListener("click",()=>{
 const camera4Button = document.getElementById("camera4Button");
 camera4Button.addEventListener("click",()=>{
     penStatus = "camera4";
+})
+const camera5Button = document.getElementById("camera5Button");
+camera1Button.addEventListener("click",()=>{
+    penStatus = "camera5";
+})
+const camera6Button = document.getElementById("camera6Button");
+camera2Button.addEventListener("click",()=>{
+    penStatus = "camera6";
+})
+const camera7Button = document.getElementById("camera7Button");
+camera3Button.addEventListener("click",()=>{
+    penStatus = "camera7";
+})
+const camera8Button = document.getElementById("camera8Button");
+camera4Button.addEventListener("click",()=>{
+    penStatus = "camera8";
 })
 const note1Button = document.getElementById("note1Button");
 note1Button.addEventListener("click",()=>{
