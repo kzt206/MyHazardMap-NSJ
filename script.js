@@ -264,8 +264,8 @@ const removeAcitiveThickness =() => {
 
 // canvasをクリックしたときのイベント設定（アイコンを置く設定）
 this.canvasPaint.addEventListener("mousedown",(e) => {
-    dw = 100; //アイコンの大きさ
-    dh = 100;
+    dw = 150; //アイコンの大きさ
+    dh = 150;
     let x = e.offsetX * canvasFactor-dw/2;
     let y = e.offsetY * canvasFactor-dh/2;
 
