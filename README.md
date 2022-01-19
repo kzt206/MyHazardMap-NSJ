@@ -11,4 +11,4 @@
 
 ぜひ、ご活用ください。
 
-https://kzt206.github.io/MyHazardMap-TM/
+https://kzt206.github.io/MyHazardMap-NSJ/
