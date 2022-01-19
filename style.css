@@ -97,7 +97,7 @@ input[type='file']{
 .tool-box-row{
     /* margin-top:5px; */
     display: flex;
-    height:8%;
+    height:9%;
 }
 
 .tool,.toolColor,.toolThickness{
@@ -124,10 +124,10 @@ input[type='file']{
     border-bottom: solid 1px gray;
     margin-bottom: 3px;
 }
-#tool-color{
+/* #tool-color{
     border-bottom: solid 1px gray;
     margin-bottom: 3px;
-}
+} */
 
 .tool:hover{
     /* background-color: #000; */
@@ -282,13 +282,14 @@ input[type='file']{
     /* margin: 0px; */
     display: flex;
     width:var(--display-width);
-    margin-top:10px;
+    margin-top:30px;
     margin-right: 0px;
 }
 
 .fukidashi{
     width: 40%;
     display: inline;
+    margin-right:10px;
     /* border: dashed 1px blue; */
 }
 
