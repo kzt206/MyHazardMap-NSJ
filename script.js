@@ -464,8 +464,8 @@ fukidashiAreaNameList.forEach(function(value,index){
 
 
 //downloadボタンの実装
-const downloadButton = document.getElementById("download-button1");
-downloadButton.addEventListener("click",(e) => {
+const downloadButton1 = document.getElementById("download-button1");
+downloadButton1.addEventListener("click",(e) => {
 
     console.log("contactButton is clicked.");
 
