@@ -521,7 +521,7 @@ downloadButton1.addEventListener("click",(e) => {
         console.log("save function start")
         let link = document.createElement("a");
         link.href = canvasContact.toDataURL("image/png");
-        link.download = "testMyHazardMap.png";
+        link.download = "MyHazardMap_Map.png";
         link.click();    
     },500)
 
@@ -539,6 +539,21 @@ downloadButton2.addEventListener("click",(e) => {
     let cWidth = canvasContact.width;
     let cHeight = canvasContact.height;
 
+    let titleWidth = cWidth;
+    let titleHeight = cHeight * 0.05;
+
+    let photoSpaceWidth = canvasContact.width;
+    let photoSpaceHeight = canvasContact.height * 0.60;
+    // let photoWidth = photoSpaceWidth/4;
+    // let photoHeight = photoSpaceHeight -
+
+    let fukidashiSpaceWidth = canvasContact.width * 0.60;
+    let fukidashiSpaceHeight = canvasContact.height * 0.35;
+
+    let commentSpaceWidth = canvasContact.width * 0.40;
+    let commentSpaceHeight = canvasContact.height * 0.35;
+
+
     //名前の書き込み
     let nameText = document.getElementById("name");
     // console.log(nameText.value);
@@ -547,16 +562,18 @@ downloadButton2.addEventListener("click",(e) => {
         // let x = 50 ;	// 水平位置
         // let y = 50 ;	// 垂直位置
     ctxContact.font = 'bold ' + fontSize +'px Arial, meiryo, sans-serif';
-    ctxContact.fillText( "名前："+nameText.value, original_width + 30, 50);
+    ctxContact.fillText( "名前："+nameText.value, 20, titleHeight/2 );
 
     //カメラキャラクターの貼り付け
+    charaCameraWidth = 30*canvasFactor;
+    charaCameraHeight = 30*canvasFactor;
     charaCamera.forEach(function(value, index){
-        ctxContact.drawImage(charaCamera[index],original_width+photo_original_width/20,(photo_original_height+photo_title_height)*index+100,30*canvasFactor,30*canvasFactor);
+        ctxContact.drawImage(charaCamera[index],0+photoSpaceWidth/4*(index%4),titleHeight+photoSpaceHeight/2*Math.floor(index/4),charaCameraWidth,charaCameraHeight);
     });
 
     //カメラのタイトルの貼り付け
     //タイトルの取得
-    titlePhotoIDList = ["photo1title","photo2title","photo3title","photo4title"];
+    titlePhotoIDList = ["photo1title","photo2title","photo3title","photo4title","photo5title","photo6title","photo7title","photo8title"];
     titlePhotoList = [];
     titlePhotoIDList.forEach(function(value,index){
         // console.log(value);
@@ -567,7 +584,8 @@ downloadButton2.addEventListener("click",(e) => {
     ctxContact.font = 'bold ' + fontSize +'px Arial, meiryo, sans-serif';
     titlePhotoList.forEach(function(value,index){
         // console.log(titlePhotoList[index])
-        ctxContact.fillText(value,original_width+photo_original_width/4,(photo_original_height+photo_title_height)*index+170);
+        ctxContact.fillText(value,charaCameraWidth+photoSpaceWidth/4*(index%4),titleHeight+photoSpaceHeight/2*Math.floor(index/4)+charaCameraHeight*0.75);
+        // ctxContact.fillText(value,original_width+photo_original_width/4,(photo_original_height+photo_title_height)*index+170);
     });
     //カメラ画像の結合
     ctxPhotoList.forEach(function(value,index){
@@ -576,7 +594,8 @@ downloadButton2.addEventListener("click",(e) => {
         
         //写真貼り付け
         imagePhoto.onload = function(){
-            ctxContact.drawImage(imagePhoto,original_width,(photo_original_height+photo_title_height)*index+photo_title_height+50,photo_original_width,photo_original_height);
+            ctxContact.drawImage(imagePhoto,0+photoSpaceWidth/4*(index%4),titleHeight+charaCameraHeight+photoSpaceHeight/2*Math.floor(index/4),photoSpaceWidth/4,photoSpaceHeight/2-charaCameraHeight);
+            // ctxContact.drawImage(imagePhoto,original_width,(photo_original_height+photo_title_height)*index+photo_title_height+50,photo_original_width,photo_original_height);
         }
 
     });
@@ -658,7 +677,7 @@ downloadButton2.addEventListener("click",(e) => {
         console.log("save function start")
         let link = document.createElement("a");
         link.href = canvasContact.toDataURL("image/png");
-        link.download = "testMyHazardMap.png";
+        link.download = "MyHazardMap_Photo.png";
         link.click();    
     },500)
 
