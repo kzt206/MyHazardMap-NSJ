@@ -454,7 +454,7 @@ function drawLine(x1,y1,x2,y2){
 }
 
 //吹き出しエリアの取得
-fukidashiAreaNameList = ["fukidashi1","fukidashi2","fukidashi3","fukidashi4"];
+fukidashiAreaNameList = ["fukidashi1","fukidashi2","fukidashi3","fukidashi4","fukidashi5","fukidashi6","fukidashi7","fukidashi8"];
 fukidashiAreaList = []
 fukidashiAreaNameList.forEach(function(value,index){
     // console.log(value);
@@ -463,11 +463,11 @@ fukidashiAreaNameList.forEach(function(value,index){
 
 
 
-//downloadボタンの実装
+//download1ボタンの実装
 const downloadButton1 = document.getElementById("download-button1");
 downloadButton1.addEventListener("click",(e) => {
 
-    console.log("contactButton is clicked.");
+    console.log("downloadButton1 is clicked.");
 
     // contactCtx2(saveImage,ctxSheet,ctxPaint);
 
@@ -626,6 +626,171 @@ downloadButton1.addEventListener("click",(e) => {
     },500)
 
 }); 
+
+//download2ボタンの実装
+const downloadButton2 = document.getElementById("download-button2");
+downloadButton2.addEventListener("click",(e) => {
+
+    console.log("downloadButton2 is clicked.");
+
+    // contactCtx2(saveImage,ctxSheet,ctxPaint);
+
+    ctxContact.clearRect(0,0,canvasContact.width,canvasContact.height);
+
+    //マップの結合
+    let image1 = createImage(ctxMap);
+    image1.onload = function(){
+        ctxContact.drawImage(image1,4,4,original_width-14,original_height-10);  //original_width = 950*canvasFactor;  //style="width:750px; height:500px"
+                                                                          //original_height = 670*canvasFactor;  //  *1.414
+    }
+    //マップの枠
+    // パスをリセット
+    ctxContact.beginPath () ;
+    // 線を引くスタート地点に移動
+    ctxContact.moveTo( 2, 2 ) ;
+    // スタート地点から指定位置まで線を引く
+    ctxContact.lineTo(original_width-2,2)
+    ctxContact.lineTo(original_width-2,original_height-2)
+    ctxContact.lineTo(2,original_height-2)
+    ctxContact.lineTo(2,2)
+    // 線の色
+    ctxContact.strokeStyle = "gray" ;
+    // 線の太さ
+    ctxContact.lineWidth = 4 ;
+    // 線を描画する
+    ctxContact.stroke() ;
+
+    //ペイント内容の結合
+    let image2 = createImage(ctxPaint);
+    image2.onload = function(){
+        ctxContact.drawImage(image2,0,0,original_width,original_height);
+    }
+
+    //名前の書き込み
+    let nameText = document.getElementById("name");
+    // console.log(nameText.value);
+    let fontSize = 50;
+    // let lineHeight = 1.1618 ;	// 行の高さ (フォントサイズに対する倍率)
+        // let x = 50 ;	// 水平位置
+        // let y = 50 ;	// 垂直位置
+    ctxContact.font = 'bold ' + fontSize +'px Arial, meiryo, sans-serif';
+    ctxContact.fillText( "名前："+nameText.value, original_width + 30, 50);
+
+    //カメラキャラクターの貼り付け
+    charaCamera.forEach(function(value, index){
+        ctxContact.drawImage(charaCamera[index],original_width+photo_original_width/20,(photo_original_height+photo_title_height)*index+100,30*canvasFactor,30*canvasFactor);
+    });
+
+    //カメラのタイトルの貼り付け
+    //タイトルの取得
+    titlePhotoIDList = ["photo1title","photo2title","photo3title","photo4title"];
+    titlePhotoList = [];
+    titlePhotoIDList.forEach(function(value,index){
+        // console.log(value);
+        titlePhotoList.push(document.getElementById(value).value);
+        // console.log(document.getElementById(value).value);
+    });
+    fontSize = 40;
+    ctxContact.font = 'bold ' + fontSize +'px Arial, meiryo, sans-serif';
+    titlePhotoList.forEach(function(value,index){
+        // console.log(titlePhotoList[index])
+        ctxContact.fillText(value,original_width+photo_original_width/4,(photo_original_height+photo_title_height)*index+170);
+    });
+    //カメラ画像の結合
+    ctxPhotoList.forEach(function(value,index){
+        // console.log(index);
+        let imagePhoto = createImage(ctxPhotoList[index]);
+        
+        //写真貼り付け
+        imagePhoto.onload = function(){
+            ctxContact.drawImage(imagePhoto,original_width,(photo_original_height+photo_title_height)*index+photo_title_height+50,photo_original_width,photo_original_height);
+        }
+
+    });
+
+    fukidashi_width = original_width/2/4;
+    fukidashi_title_height = 100;
+    //吹き出しキャラクターの貼り付け
+    charaFukidashi.forEach(function(value, index){
+        ctxContact.drawImage(charaFukidashi[index],fukidashi_width/2+fukidashi_width*index,original_height+fukidashi_title_height/2,30*canvasFactor,30*canvasFactor);
+    });
+    //吹き出しコメントの結合
+    // https://www.koikikukan.com/archives/2013/08/28-015555.php
+    // console.log(fukidashiAreaList[1].value);
+    fukidashiAreaList.forEach(function(value,index){
+        // console.log(index);
+        // console.log(fukidashiAreaList[index].value);
+        let text = fukidashiAreaList[index].value;
+        fontSize = 40;
+        lineHeight = 1.1618 ;	// 行の高さ (フォントサイズに対する倍率)
+        // let x = 50 ;	// 水平位置
+        // let y = 50 ;	// 垂直位置
+        ctxContact.font = 'bold ' + fontSize +'px Arial, meiryo, sans-serif';
+
+        let lineNum = Math.trunc(text.length/6) +1;
+        // console.log("lineNum : " + lineNum);
+        // console.log(text.substr(0,10))
+        for( i=0;i<lineNum;i++){
+            let line = text.substr(i*5,5)
+            var addY = fontSize ;
+	        // 2行目以降の水平位置は行数とlineHeightを考慮する
+	        if ( i ) addY += fontSize * lineHeight * i ;
+            ctxContact.fillText( line, fukidashi_width*index + fukidashi_width/2, original_height + addY + fukidashi_title_height*1.2);
+        }
+
+    });    
+ 
+    // コメント１の結合
+    //タイトル部分
+    let comment1title = document.getElementById("comment-title1").textContent;
+    fontSize = 35;
+    ctxContact.font = 'bold ' + fontSize +'px Arial, meiryo, sans-serif';
+    ctxContact.fillText( comment1title, fukidashi_width*4 , original_height+100);
+    //コメント部分
+    let comment1Text = document.getElementById("comment1").value;
+    fontSize = 40;
+    ctxContact.font = 'bold ' + fontSize +'px Arial, meiryo, sans-serif';
+    lineCharas = 13;
+    let lineNum = Math.trunc(comment1Text.length/lineCharas) +1;
+    for( i=0;i<lineNum;i++){
+        let line = comment1Text.substr(i*lineCharas,lineCharas)
+        var addY = fontSize ;
+        // 2行目以降の水平位置は行数とlineHeightを考慮する
+        if ( i ) addY += fontSize * lineHeight * i ;
+        ctxContact.fillText( line, fukidashi_width*4 + fukidashi_width/2, original_height + addY + fukidashi_title_height*1.2);
+    }
+
+    // コメント２の結合
+    //タイトル部分
+    let comment2title = document.getElementById("comment-title2").textContent;
+    fontSize = 35;
+    ctxContact.font = 'bold ' + fontSize +'px Arial, meiryo, sans-serif';
+    ctxContact.fillText( comment2title, fukidashi_width*6 , original_height+100);
+    //コメント部分
+    let comment2Text = document.getElementById("comment2").value;
+    fontSize = 40;
+    ctxContact.font = 'bold ' + fontSize +'px Arial, meiryo, sans-serif';
+    // lineCharas = 15;
+    lineNum = Math.trunc(comment2Text.length/lineCharas) +1;
+    for( i=0;i<lineNum;i++){
+        let line = comment2Text.substr(i*lineCharas,lineCharas)
+        var addY = fontSize ;
+        // 2行目以降の水平位置は行数とlineHeightを考慮する
+        if ( i ) addY += fontSize * lineHeight * i ;
+        ctxContact.fillText( line, fukidashi_width*6 + fukidashi_width/2, original_height + addY + fukidashi_title_height*1.2);
+    }
+
+    // 500ms 待ってから保存
+    setTimeout(function(){
+        console.log("save function start")
+        let link = document.createElement("a");
+        link.href = canvasContact.toDataURL("image/png");
+        link.download = "testMyHazardMap.png";
+        link.click();    
+    },500)
+
+}); 
+
 
 let createImage= function(context){
     var image= new Image;
