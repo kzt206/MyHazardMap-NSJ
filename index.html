@@ -22,6 +22,8 @@
                 minlength="4" maxlength="15" size="20" placeholder="名前を入力">
             </div>
             <div id="title-label">マイ　ハザード　マップ　を作ろう！</div>
+            <div class="download-button" id="save-button">save</div>
+            <div class="download-button" id="load-button">load</div>
             <div class="download-button" id="download-button1">ダウンロードボタン１</div>
             <div class="download-button" id="download-button2">ダウンロードボタン２</div>
         </div>
@@ -219,45 +221,45 @@
                 <div class="photos-row">
                     <div class="photos-title">
                         <label>
-                            <input class="file" type="file" id="selectPhoto1" accept=".png,.jpeg,.jpg"> <img src="image/camera5.png"  height="40">
+                            <input class="file" type="file" id="selectPhoto5" accept=".png,.jpeg,.jpg"> <img src="image/camera5.png"  height="40">
                         </label>
-                        <input type="text" id="photo1title" maxlength="8" size="12" placeholder="写真1の説明を入力">
+                        <input type="text" id="photo5title" maxlength="8" size="12" placeholder="写真5の説明を入力">
                     </div>
                     <div class="photos-canvas">
-                        <canvas id="canvasPhoto1" class="canvasPhoto"></canvas>
+                        <canvas id="canvasPhoto5" class="canvasPhoto"></canvas>
                     </div>
                 </div>
                 <div class="photos-row">
                     <div class="photos-title">
                         <label>
-                            <input class="file" type="file" id="selectPhoto2" accept=".png,.jpeg,.jpg"> <img src="image/camera6.png" height="40">
+                            <input class="file" type="file" id="selectPhoto6" accept=".png,.jpeg,.jpg"> <img src="image/camera6.png" height="40">
                         </label>
-                        <input type="text" id="photo2title" maxlength="8" size="12" placeholder="写真2の説明を入力">
+                        <input type="text" id="photo6title" maxlength="8" size="12" placeholder="写真6の説明を入力">
                     </div>
                     <div class="photos-canvas">
-                        <canvas id="canvasPhoto2" class="canvasPhoto"></canvas>
+                        <canvas id="canvasPhoto6" class="canvasPhoto"></canvas>
                     </div>
                 </div>
                 <div class="photos-row">
                     <div class="photos-title">
                         <label>
-                            <input class="file" type="file" id="selectPhoto3" accept=".png,.jpeg,.jpg"> <img src="image/camera7.png" height="40">
+                            <input class="file" type="file" id="selectPhoto7" accept=".png,.jpeg,.jpg"> <img src="image/camera7.png" height="40">
                         </label>
-                        <input type="text" id="photo3title" maxlength="8" size="12" placeholder="写真3の説明を入力">
+                        <input type="text" id="photo7title" maxlength="8" size="12" placeholder="写真7の説明を入力">
                     </div>
                     <div class="photos-canvas">
-                        <canvas id="canvasPhoto3" class="canvasPhoto"></canvas>
+                        <canvas id="canvasPhoto7" class="canvasPhoto"></canvas>
                     </div>
                 </div>
                 <div class="photos-row">
                     <div class="photos-title">
                         <label>
-                            <input class="file" type="file" id="selectPhoto4" accept=".png,.jpeg,.jpg"> <img src="image/camera8.png" height="40">
+                            <input class="file" type="file" id="selectPhoto8" accept=".png,.jpeg,.jpg"> <img src="image/camera8.png" height="40">
                         </label>
-                        <input type="text" id="photo4title" maxlength="8" size="12" placeholder="写真4の説明を入力">
+                        <input type="text" id="photo8title" maxlength="8" size="12" placeholder="写真8の説明を入力">
                     </div>
                     <div class="photos-canvas">
-                        <canvas id="canvasPhoto4" class="canvasPhoto"></canvas>
+                        <canvas id="canvasPhoto8" class="canvasPhoto"></canvas>
                     </div>
                 </div>
             </div>
@@ -304,34 +306,34 @@
              <div class="fukidashi">
                 <div class="fukidashi-row">
                     <div class="fukidashi-title tool" onclick="selectButton(this)">
-                        <a id="note5Button" class="toolButton"><img src="image/note1.png"></a>
+                        <a id="note5Button" class="toolButton"><img src="image/note5.png"></a>
                     </div>
                     <div class="fukidashi-comment">
-                        <textarea class="textFukidashi" name="" id="fukidashi1" maxlength="78"></textarea>
+                        <textarea class="textFukidashi" name="" id="fukidashi5" maxlength="78"></textarea>
                     </div>
                 </div>
                 <div class="fukidashi-row">
                     <div class="fukidashi-title tool" onclick="selectButton(this)">
-                        <a id="note6Button" class="toolButton"><img src="image/note2.png"></a>
+                        <a id="note6Button" class="toolButton"><img src="image/note6.png"></a>
                     </div>
                     <div class="fukidashi-comment">
-                        <textarea class="textFukidashi" name="" id="fukidashi2" maxlength="78" ></textarea>
+                        <textarea class="textFukidashi" name="" id="fukidashi6" maxlength="78" ></textarea>
                     </div>
                 </div>
                 <div class="fukidashi-row">
                     <div class="fukidashi-title tool" onclick="selectButton(this)">
-                        <a id="note7Button" class="toolButton"><img src="image/note3.png"></a>
+                        <a id="note7Button" class="toolButton"><img src="image/note7.png"></a>
                     </div>
                     <div class="fukidashi-comment">
-                        <textarea class="textFukidashi" name="" id="fukidashi3" maxlength="78" ></textarea>
+                        <textarea class="textFukidashi" name="" id="fukidashi7" maxlength="78" ></textarea>
                     </div>
                 </div>
                 <div class="fukidashi-row">
                     <div class="fukidashi-title tool" onclick="selectButton(this)">
-                        <a id="note8Button" class="toolButton"><img src="image/note4.png"></a>
+                        <a id="note8Button" class="toolButton"><img src="image/note8.png"></a>
                     </div>
                     <div class="fukidashi-comment">
-                        <textarea class="textFukidashi" name="" id="fukidashi4" maxlength="78"></textarea>
+                        <textarea class="textFukidashi" name="" id="fukidashi8" maxlength="78"></textarea>
                     </div>
                 </div>
             </div>

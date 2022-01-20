@@ -21,6 +21,16 @@
     /* background-color:blue; */
 }
 
+#save-button,#load-button{
+    width: 5%;
+    margin-right: 10px;
+    text-align: center;
+    background-color: #00b7ff;
+    border-bottom: 5px solid #024f97;
+    border-radius: 10px;
+    /* width:200px; */
+}
+
 #download-button1{
     width: 15%;
     /* margin-left: 300px; */

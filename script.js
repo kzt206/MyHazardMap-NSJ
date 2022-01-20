@@ -26,7 +26,7 @@ canvasPaint.style.width = original_width/canvasFactor + "px";
 canvasPaint.style.height = original_height/canvasFactor + "px";
 
 //photo キャンバスの設定
-canvasPhotoListName = ["canvasPhoto1","canvasPhoto2","canvasPhoto3","canvasPhoto4"];
+canvasPhotoListName = ["canvasPhoto1","canvasPhoto2","canvasPhoto3","canvasPhoto4","canvasPhoto5","canvasPhoto6","canvasPhoto7","canvasPhoto8"];
 canvasFactor = 3;
 photo_original_width = 198*canvasFactor;  //style="width:750px; height:500px"
 photo_original_height = 125*canvasFactor;
@@ -70,7 +70,7 @@ loadMapFile.addEventListener("change",function(evt){
 },false);
 
 //写真画像の読み込みイベントの設定（配列を利用）
-loadPhotoListName = ["selectPhoto1","selectPhoto2","selectPhoto3","selectPhoto4"];
+loadPhotoListName = ["selectPhoto1","selectPhoto2","selectPhoto3","selectPhoto4","selectPhoto5","selectPhoto6","selectPhoto7","selectPhoto8"];
 loadPhotoFileList = [];
 loadPhotoListName.forEach(function(value,index){
     loadPhotoFileList.push(document.getElementById(value));
@@ -100,40 +100,40 @@ const charaSchool = new Image();
 charaSchool.src = "image/school.png"
 const charaEvacuation = new Image();
 charaEvacuation.src = "image/evacuation2.png"
-const charaCamera1 = new Image();
-charaCamera1.src = "image/camera1.png"
-const charaCamera2 = new Image();
-charaCamera2.src = "image/camera2.png"
-const charaCamera3 = new Image();
-charaCamera3.src = "image/camera3.png"
-const charaCamera4 = new Image();
-charaCamera4.src = "image/camera4.png"
-const charaCamera5 = new Image();
-charaCamera5.src = "image/camera5.png"
-const charaCamera6 = new Image();
-charaCamera6.src = "image/camera6.png"
-const charaCamera7 = new Image();
-charaCamera7.src = "image/camera7.png"
-const charaCamera8 = new Image();
-charaCamera8.src = "image/camera8.png"
-const charaNote1 = new Image();
-charaNote1.src = "image/note1.png"
-const charaNote2 = new Image();
-charaNote2.src = "image/note2.png"
-const charaNote3 = new Image();
-charaNote3.src = "image/note3.png"
-const charaNote4 = new Image();
-charaNote4.src = "image/note4.png"
-const charaNote5 = new Image();
-charaNote5.src = "image/note5.png"
-const charaNote6 = new Image();
-charaNote6.src = "image/note6.png"
-const charaNote7 = new Image();
-charaNote7.src = "image/note7.png"
-const charaNote8 = new Image();
-charaNote8.src = "image/note8.png"　　　　　　　　　　　　
-const charaNote9 = new Image();
-charaNote9.src = "image/note9.png"
+// const charaCamera1 = new Image();
+// charaCamera1.src = "image/camera1.png"
+// const charaCamera2 = new Image();
+// charaCamera2.src = "image/camera2.png"
+// const charaCamera3 = new Image();
+// charaCamera3.src = "image/camera3.png"
+// const charaCamera4 = new Image();
+// charaCamera4.src = "image/camera4.png"
+// const charaCamera5 = new Image();
+// charaCamera5.src = "image/camera5.png"
+// const charaCamera6 = new Image();
+// charaCamera6.src = "image/camera6.png"
+// const charaCamera7 = new Image();
+// charaCamera7.src = "image/camera7.png"
+// const charaCamera8 = new Image();
+// charaCamera8.src = "image/camera8.png"
+// const charaNote1 = new Image();
+// charaNote1.src = "image/note1.png"
+// const charaNote2 = new Image();
+// charaNote2.src = "image/note2.png"
+// const charaNote3 = new Image();
+// charaNote3.src = "image/note3.png"
+// const charaNote4 = new Image();
+// charaNote4.src = "image/note4.png"
+// const charaNote5 = new Image();
+// charaNote5.src = "image/note5.png"
+// const charaNote6 = new Image();
+// charaNote6.src = "image/note6.png"
+// const charaNote7 = new Image();
+// charaNote7.src = "image/note7.png"
+// const charaNote8 = new Image();
+// charaNote8.src = "image/note8.png"
+// const charaNote9 = new Image();
+// charaNote9.src = "image/note9.png"
 
 charaCameraFileList = ["image/camera1.png","image/camera2.png","image/camera3.png","image/camera4.png","image/camera5.png","image/camera6.png","image/camera7.png","image/camera8.png"]
 charaCamera = []
@@ -145,7 +145,7 @@ charaCameraFileList.forEach(function(value,index){
 
 
 //吹き出しコメントの取得
-charaFukidashiFileList = ["image/note1.png","image/note2.png","image/note3.png","image/note4.png"]
+charaFukidashiFileList = ["image/note1.png","image/note2.png","image/note3.png","image/note4.png","image/note5.png","image/note6.png","image/note7.png","image/note8.png"]
 charaFukidashi = []
 charaFukidashiFileList.forEach(function(value,index){
     charaFukidashi.push(new Image());
@@ -175,7 +175,9 @@ evacuationButton.addEventListener("click",()=>{
 // })
 const camera1Button = document.getElementById("camera1Button");
 camera1Button.addEventListener("click",()=>{
+    console.log("Camera 1 selected");
     penStatus = "camera1";
+    console.log(penStatus);
 })
 const camera2Button = document.getElementById("camera2Button");
 camera2Button.addEventListener("click",()=>{
@@ -190,19 +192,19 @@ camera4Button.addEventListener("click",()=>{
     penStatus = "camera4";
 })
 const camera5Button = document.getElementById("camera5Button");
-camera1Button.addEventListener("click",()=>{
+camera5Button.addEventListener("click",()=>{
     penStatus = "camera5";
 })
 const camera6Button = document.getElementById("camera6Button");
-camera2Button.addEventListener("click",()=>{
+camera6Button.addEventListener("click",()=>{
     penStatus = "camera6";
 })
 const camera7Button = document.getElementById("camera7Button");
-camera3Button.addEventListener("click",()=>{
+camera7Button.addEventListener("click",()=>{
     penStatus = "camera7";
 })
 const camera8Button = document.getElementById("camera8Button");
-camera4Button.addEventListener("click",()=>{
+camera8Button.addEventListener("click",()=>{
     penStatus = "camera8";
 })
 const note1Button = document.getElementById("note1Button");
@@ -220,6 +222,22 @@ note3Button.addEventListener("click",()=>{
 const note4Button = document.getElementById("note4Button");
 note4Button.addEventListener("click",()=>{
     penStatus = "note4";
+})
+const note5Button = document.getElementById("note5Button");
+note5Button.addEventListener("click",()=>{
+    penStatus = "note5";
+})
+const note6Button = document.getElementById("note6Button");
+note6Button.addEventListener("click",()=>{
+    penStatus = "note6";
+})
+const note7Button = document.getElementById("note7Button");
+note7Button.addEventListener("click",()=>{
+    penStatus = "note7";
+})
+const note8Button = document.getElementById("note8Button");
+note8Button.addEventListener("click",()=>{
+    penStatus = "note8";
 })
 const eraserButton = document.getElementById("eraserButton");
 eraserButton.addEventListener("click",()=>{
@@ -291,7 +309,7 @@ this.canvasPaint.addEventListener("mousedown",(e) => {
     let x = e.offsetX * canvasFactor-dw/2;
     let y = e.offsetY * canvasFactor-dh/2;
 
-    console.log("アイコンの場所　x:",x,"y:",y);
+    console.log("アイコンの場所　x:",x,"y:",y,penStatus);
 
     
     //penStatusの状態に応じて挙動変更(アイコンの設置)
@@ -309,28 +327,52 @@ this.canvasPaint.addEventListener("mousedown",(e) => {
             ctxPaint.drawImage(charaEvacuation,x,y,dw,dh);
             break;
         case "camera1":
-            ctxPaint.drawImage(charaCamera1,x,y,dw,dh);
+            ctxPaint.drawImage(charaCamera[0],x,y,dw,dh);
             break;
         case "camera2":
-            ctxPaint.drawImage(charaCamera2,x,y,dw,dh);
+            ctxPaint.drawImage(charaCamera[1],x,y,dw,dh);
             break;
         case "camera3":
-            ctxPaint.drawImage(charaCamera3,x,y,dw,dh);
+            ctxPaint.drawImage(charaCamera[2],x,y,dw,dh);
             break;
         case "camera4":
-            ctxPaint.drawImage(charaCamera4,x,y,dw,dh);
+            ctxPaint.drawImage(charaCamera[3],x,y,dw,dh);
+            break;
+        case "camera5":
+            ctxPaint.drawImage(charaCamera[4],x,y,dw,dh);
+            break;
+        case "camera6":
+            ctxPaint.drawImage(charaCamera[5],x,y,dw,dh);
+            break;
+        case "camera7":
+            ctxPaint.drawImage(charaCamera[6],x,y,dw,dh);
+            break;
+        case "camera8":
+            ctxPaint.drawImage(charaCamera[7],x,y,dw,dh);
             break;
         case "note1":
-            ctxPaint.drawImage(charaNote1,x,y,dw,dh);
+            ctxPaint.drawImage(charaFukidashi[0],x,y,dw,dh);
             break;
         case "note2":
-            ctxPaint.drawImage(charaNote2,x,y,dw,dh);
+            ctxPaint.drawImage(charaFukidashi[1],x,y,dw,dh);
             break;
         case "note3":
-            ctxPaint.drawImage(charaNote3,x,y,dw,dh);
+            ctxPaint.drawImage(charaFukidashi[2],x,y,dw,dh);
             break;
         case "note4":
-            ctxPaint.drawImage(charaNote4,x,y,dw,dh);
+            ctxPaint.drawImage(charaFukidashi[3],x,y,dw,dh);
+            break;
+        case "note5":
+            ctxPaint.drawImage(charaFukidashi[4],x,y,dw,dh);
+            break;
+        case "note6":
+            ctxPaint.drawImage(charaFukidashi[5],x,y,dw,dh);
+            break;
+        case "note7":
+            ctxPaint.drawImage(charaFukidashi[6],x,y,dw,dh);
+            break;
+        case "note8":
+            ctxPaint.drawImage(charaFukidashi[7],x,y,dw,dh);
             break;
         case "eraser":
             isDrag = true;
@@ -422,7 +464,7 @@ fukidashiAreaNameList.forEach(function(value,index){
 
 
 //downloadボタンの実装
-const downloadButton = document.getElementById("download-button");
+const downloadButton = document.getElementById("download-button1");
 downloadButton.addEventListener("click",(e) => {
 
     console.log("contactButton is clicked.");
