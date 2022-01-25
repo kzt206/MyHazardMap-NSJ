@@ -462,6 +462,48 @@ fukidashiAreaNameList.forEach(function(value,index){
 });
 
 
+//save-buttonの実装
+const saveButton = document.getElementById("save-button");
+saveButton.addEventListener("click",(e) => {
+    console.log("saveButton is clicked.");
+    
+
+    // 500ms 待ってから保存
+    setTimeout(function(){
+        console.log("save function start")
+        let link = document.createElement("a");
+        link.href = canvasPaint.toDataURL("image/png");
+        link.download = "TempData_Map.png";
+        link.click();    
+    },500)
+
+
+}); 
+
+//load-buttonの実装
+//
+const loadPaintFile = document.getElementById("loadPaintFile");
+loadPaintFile.addEventListener("change",function(evt){
+
+    ctxPaint.clearRect(0,0,canvasPaint.width,canvasPaint.height);
+
+    console.log("file selector");
+    let file = evt.target.files;
+    let reader = new FileReader();
+    reader.readAsDataURL(file[0]);
+    console.log(file[0]);
+    reader.onload = function(){
+        let dataURL = reader.result;
+        let img = new Image();
+        img.src = dataURL;
+        img.onload = function(){
+            ctxPaint.drawImage(img,0,0,canvasPaint.width,canvasPaint.height);
+        }
+        // ctx02.fillRect(50,90,30,20);
+    }
+
+},false);
+
 
 //download1ボタンの実装
 const downloadButton1 = document.getElementById("download-button1");
