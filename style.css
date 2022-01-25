@@ -21,9 +21,20 @@
     /* background-color:blue; */
 }
 
-#save-button,#load-button{
+#save-button{
     width: 5%;
     margin-right: 10px;
+    text-align: center;
+    background-color: #00b7ff;
+    border-bottom: 5px solid #024f97;
+    border-radius: 10px;
+    /* width:200px; */
+}
+
+#load-button{
+    width: 100%;
+    margin-right: 30px;
+    margin-left: 0px;
     text-align: center;
     background-color: #00b7ff;
     border-bottom: 5px solid #024f97;
